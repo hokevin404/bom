@@ -1,7 +1,9 @@
-// Create your game here!
+// Part 1 
 // num variable to hold a randomly generated number between 0 - 100
 let num = Math.floor(Math.random(100)*100);
-//console.log(num);
+console.log(`CHEATER!!! The answer is ${num}.`);
+//let bodyColor = document.body.
+//bodyColor.style.backgroundColor = 'gold';
 
 // For loop to give user 5 tries to guess
 for(let tries = 5; tries >= 1; tries--)
@@ -12,7 +14,13 @@ for(let tries = 5; tries >= 1; tries--)
     // If user guesses correct number, they win
     if(userInput == num)
     {
-        alert(`YOU WIN!!!`);
+        // Change background color to green if user is correct
+        document.body.style.backgroundColor = "green";
+        // Delays message by .3s to allow background color change
+        setTimeout(() => {
+            alert(`YOU WIN!!!`);
+        }, 300);
+        
         break;
     }
     // If their guess too high, message them it's too high and remaining tries left
@@ -26,5 +34,15 @@ for(let tries = 5; tries >= 1; tries--)
 
     // If no tries left, message they lost
     if(tries == 1)
-        alert(`Sorry, you LOSE!!!`);
+    {
+        // Change background color to red if user loses
+        document.body.style.backgroundColor = "red";
+        // Delays message by .3s to allow background color change
+        setTimeout(() => {
+            alert(`Sorry, you LOSE!!!`);
+        }, 300);
+    }
 }
+
+
+// Part 2
